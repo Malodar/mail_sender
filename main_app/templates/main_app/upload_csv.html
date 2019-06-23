@@ -1,0 +1,52 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}
+Uploaded CSV
+{% endblock %}
+
+{% block content %}
+    <h1>Table with up to first 10 rows in CSV file</h1>
+    <h3> just to be sure that the data is uploaded</h3>
+    <table class="table-sm table-bordered table-hover ">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Sender</th>
+                <th>Recipient</th>
+                <th>DOB</th>
+                <th>Purpose</th>
+                <th>Attachement</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <script>
+                let my_param = {{ data }};
+            </script>
+            {% for item in data|slice:":10" %}
+
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.recipient }}</td>
+                    <td>{{ item.dob }}</td>
+                    <td>{{ item.purpose }}</td>
+                    {% if item.attachement %}
+                        <td>Yes</td>
+                        {% else %}
+                        <td>No</td>
+                    {% endif %}
+                    <td>{{ item.attachement }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'home' %}" class="button">Back to Homepage</a>
+    <form action="{% url 'email_sending' %}" method="post">
+    {% csrf_token %}
+        <input value="{{ data }}" name="fl" hidden>
+        <input type="submit" value="Start sending" class="button btn-primary">
+    </form>
+
+{% endblock %}
+

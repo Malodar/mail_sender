@@ -1,0 +1,19 @@
+{% load bootstrap4 %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body style="width: 900px; margin: 0 auto">
+    {% block content %}
+
+    {% endblock %}
+{#<script src="{% static 'js/script.js' %}"></script>#}
+</body>
+
+</html>
