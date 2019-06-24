@@ -5,8 +5,9 @@ Uploaded CSV
 {% endblock %}
 
 {% block content %}
-    <h1>Table with up to first 10 rows in CSV file</h1>
-    <h3> just to be sure that the data is uploaded</h3>
+    <h1 class="text-center">Table with up to first 10 rows in CSV file</h1>
+    <h3 class="text-muted text-center"> just to be sure that the data is uploaded</h3>
+    <a href="{% url 'home' %}" class="button">Back to Homepage</a>
     <table class="table-sm table-bordered table-hover ">
         <thead class="thead-dark">
             <tr>
@@ -35,7 +36,6 @@ Uploaded CSV
                         {% else %}
                         <td>No</td>
                     {% endif %}
-                    <td>{{ item.attachement }}</td>
                 </tr>
             {% endfor %}
         </tbody>
