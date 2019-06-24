@@ -5,9 +5,10 @@ Uploaded CSV
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center">Table with up to first 10 rows in CSV file</h1>
+    <h1 class="text-center">Table with up to first 5 rows in CSV file</h1>
     <h3 class="text-muted text-center"> just to be sure that the data is uploaded</h3>
     <a href="{% url 'home' %}" class="button">Back to Homepage</a>
+    <p>Totally you are going to send {{ data|length }} emails</p>
     <table class="table-sm table-bordered table-hover ">
         <thead class="thead-dark">
             <tr>
@@ -20,10 +21,7 @@ Uploaded CSV
             </tr>
         </thead>
         <tbody class="table-body">
-            <script>
-                let my_param = {{ data }};
-            </script>
-            {% for item in data|slice:":10" %}
+            {% for item in data|slice:":5" %}
 
                 <tr>
                     <td>{{ item.name }}</td>

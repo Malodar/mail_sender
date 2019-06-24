@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 from django.contrib import messages
@@ -8,7 +9,7 @@ from datetime import datetime
 from .forms import EventUploadFileForm
 from django.core.files.storage import default_storage
 from django.conf import settings
-import os
+from datetime import datetime
 
 import csv, smtplib, ssl
 import email.mime.multipart as mp

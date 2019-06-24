@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 django-bootstrap4 = "*"
 django-bootstrap-datepicker-plus = "*"
+django-background-tasks = "*"
 
 [requires]
 python_version = "3.6"

@@ -25,7 +25,7 @@ SECRET_KEY = 'ma9nfrg!@o1_2$h&*m&k*1z!wg&z@z=qs9t8qc7s2_-!hd2p*t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['malodar.pythonanywhere.com']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
     'bootstrap4',
     'bootstrap_datepicker_plus',
+    'background_task',
 ]
 
 BOOTSTRAP4 = {

@@ -7,6 +7,7 @@ Home Page
 {% block content %}
     <h1>Select CSV file from your computer</h1>
     <br>
+    <p>All fields are required to schedule the mail sending</p>
     <form action="{% url "upload_csv" %}" method="POST" enctype="multipart/form-data" class="form">
         {% csrf_token %}
         {{ form.media }}
